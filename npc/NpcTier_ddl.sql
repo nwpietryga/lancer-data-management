@@ -1,0 +1,23 @@
+USE LANCER;
+GO
+
+CREATE TABLE dbo.NpcTier (
+	NpcTierID INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_NpcTier_NpcTierID PRIMARY KEY,
+	Tier VARCHAR(10) NOT NULL
+);
+GO
+
+/*
+IF NOT EXISTS (
+	SELECT TOP 1 1
+	FROM dbo.NpcTier
+)
+INSERT INTO dbo.NpcTier (
+	Tier
+)
+VALUES
+('1'),
+('2'),
+('3'),
+('Custom');
+*/
