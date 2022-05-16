@@ -1,0 +1,24 @@
+USE LANCER;
+GO
+
+CREATE TABLE pilot.Pilot (
+	PilotID INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_Pilot_PilotID PRIMARY KEY,
+	Name VARCHAR(250) NOT NULL,
+	Callsign VARCHAR(50),
+	LicenseLevel TINYINT NOT NULL CONSTRAINT DF_Pilot_LicenseLevel_0 DEFAULT(0),
+	Hull TINYINT NOT NULL CONSTRAINT DF_Pilot_Hull_0 DEFAULT(0),
+	Agility TINYINT NOT NULL CONSTRAINT DF_Pilot_Agility_0 DEFAULT(0),
+	Systems TINYINT NOT NULL CONSTRAINT DF_Pilot_Systems_0 DEFAULT(0),
+	Engineering TINYINT NOT NULL CONSTRAINT DF_Pilot_Engineering_0 DEFAULT(0)
+);
+GO
+
+/*
+INSERT INTO pilot.Pilot (
+	Name,
+	Callsign,
+	Hull
+)
+VALUES
+	('John Tester', 'Crash Test', 2);
+*/
